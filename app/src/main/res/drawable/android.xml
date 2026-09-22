@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Background circle -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0" />
+    <!-- Android head -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,38 L62,38 L62,56 Q62,60 58,60 L38,60 Q34,60 34,56 Z" />
+    <!-- Left eye -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M41,45 m-2,0 a2,2 0,1 1,4 0 a2,2 0,1 1,-4 0" />
+    <!-- Right eye -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M55,45 m-2,0 a2,2 0,1 1,4 0 a2,2 0,1 1,-4 0" />
+    <!-- Left antenna -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M40,38 L36,30" />
+    <!-- Right antenna -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M56,38 L60,30" />
+    <!-- Left arm -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,40 Q28,38 30,38 L32,38 L32,54 L30,54 Q28,54 28,52 Z" />
+    <!-- Right arm -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M64,38 L66,38 Q68,38 68,40 L68,52 Q68,54 66,54 L64,54 Z" />
+</vector>

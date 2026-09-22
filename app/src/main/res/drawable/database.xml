@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Background circle -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0" />
+    <!-- Cylinder top -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,36 Q30,30 48,30 Q66,30 66,36 Q66,42 48,42 Q30,42 30,36 Z" />
+    <!-- Cylinder body -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M30,36 L30,56 Q30,62 48,62 Q66,62 66,56 L66,36 Q66,42 48,42 Q30,42 30,36 Z" />
+    <!-- Middle line -->
+    <path
+        android:strokeColor="#BBBBBB"
+        android:strokeWidth="1"
+        android:pathData="M30,46 Q30,52 48,52 Q66,52 66,46" />
+    <!-- Row dots left -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M38,48 m-1.5,0 a1.5,1.5 0,1 1,3 0 a1.5,1.5 0,1 1,-3 0" />
+    <!-- Row dots center -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M48,49 m-1.5,0 a1.5,1.5 0,1 1,3 0 a1.5,1.5 0,1 1,-3 0" />
+    <!-- Row dots right -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M58,48 m-1.5,0 a1.5,1.5 0,1 1,3 0 a1.5,1.5 0,1 1,-3 0" />
+</vector>
