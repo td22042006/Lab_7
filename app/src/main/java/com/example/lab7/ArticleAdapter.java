@@ -41,11 +41,22 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         holder.tvContent.setText(article.getContent());
         holder.tvViews.setText("Views: " + article.getViews());
 
-        Glide.with(holder.itemView.getContext())
-                .load(article.getImgCover())
-                .centerCrop()
-                .placeholder(R.drawable.ic_cover)
-                .into(holder.ivCover);
+        int resId = holder.itemView.getContext().getResources().getIdentifier(
+                article.getImgCover(), "drawable", holder.itemView.getContext().getPackageName());
+
+        if (resId != 0) {
+            Glide.with(holder.itemView.getContext())
+                    .load(resId)
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_cover)
+                    .into(holder.ivCover);
+        } else {
+            Glide.with(holder.itemView.getContext())
+                    .load(article.getImgCover())
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_cover)
+                    .into(holder.ivCover);
+        }
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {

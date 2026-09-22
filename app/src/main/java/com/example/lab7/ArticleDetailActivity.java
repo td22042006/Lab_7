@@ -45,11 +45,22 @@ public class ArticleDetailActivity extends AppCompatActivity {
             TextView tvViews = findViewById(R.id.tvDetailViews);
             TextView tvContent = findViewById(R.id.tvDetailContent);
 
-            Glide.with(this)
-                    .load(article.getImgCover())
-                    .centerCrop()
-                    .placeholder(R.drawable.ic_cover)
-                    .into(ivCover);
+            int resId = getResources().getIdentifier(
+                    article.getImgCover(), "drawable", getPackageName());
+
+            if (resId != 0) {
+                Glide.with(this)
+                        .load(resId)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_cover)
+                        .into(ivCover);
+            } else {
+                Glide.with(this)
+                        .load(article.getImgCover())
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_cover)
+                        .into(ivCover);
+            }
 
             tvTitle.setText(article.getTitle());
             tvViews.setText("Views: " + (article.getViews() + 1));

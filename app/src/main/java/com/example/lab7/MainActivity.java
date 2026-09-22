@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     int position = result.getData().getIntExtra("position", -1);
                     if (position >= 0 && position < articleList.size()) {
-                        articleList.get(position).setViews(articleList.get(position).getViews() + 1);
+                        Article article = articleList.get(position);
+                        article.setViews(article.getViews() + 1);
                         articleAdapter.notifyItemChanged(position);
                     }
                 }
@@ -38,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // 1. Khởi tạo danh sách Article
-        articleList.add(new Article("Học Android Studio", "Android Studio là môi trường phát triển tích hợp được sử dụng để xây dựng các ứng dụng Android.", "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=600&h=400&fit=crop", 10));
-        articleList.add(new Article("Lập trình Java", "Java là một ngôn ngữ lập trình phổ biến, được sử dụng để phát triển nhiều loại ứng dụng.", "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop", 25));
-        articleList.add(new Article("Ứng dụng di động", "Ứng dụng di động cung cấp nhiều tiện ích và trải nghiệm cho người dùng trên điện thoại thông minh.", "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", 18));
-        articleList.add(new Article("Cơ sở dữ liệu", "Cơ sở dữ liệu được sử dụng để lưu trữ, quản lý và truy xuất dữ liệu một cách hiệu quả.", "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&h=400&fit=crop", 32));
-        articleList.add(new Article("Phát triển Web", "Phát triển Web bao gồm việc xây dựng và duy trì các trang Web và ứng dụng Web.", "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop", 15));
+        // 1. Khởi tạo danh sách Article (views ban đầu luôn = 0, ảnh local từ drawable)
+        articleList.add(new Article("Cần Thơ", "Cần Thơ là thành phố trực thuộc Trung ương và là một trong những trung tâm kinh tế, văn hóa quan trọng của vùng Đồng bằng sông Cửu Long.", "can_tho", 0));
+        articleList.add(new Article("Bến Tre", "Bến Tre nổi tiếng với những vườn dừa xanh mát, các sản phẩm từ dừa và cảnh quan sông nước đặc trưng của miền Tây.", "ben_tre", 0));
+        articleList.add(new Article("An Giang", "An Giang có nhiều cảnh quan thiên nhiên và địa điểm văn hóa đặc sắc, nổi bật với vùng Bảy Núi và các lễ hội truyền thống.", "an_giang", 0));
+        articleList.add(new Article("Kiên Giang", "Kiên Giang có nhiều điểm đến nổi tiếng với biển đảo, trong đó Phú Quốc là một địa điểm du lịch được nhiều du khách biết đến.", "kien_giang", 0));
+        articleList.add(new Article("Cà Mau", "Cà Mau nằm ở cực Nam của Việt Nam, nổi bật với hệ sinh thái rừng ngập mặn và vùng đất Mũi Cà Mau.", "ca_mau", 0));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
